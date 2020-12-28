@@ -36,7 +36,7 @@ namespace MySaleDDD
                 Options.Password.RequireLowercase = false;
                 Options.Password.RequireNonAlphanumeric = false;
 
-
+                 
             }).AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddScoped<IBrandRepository, BrandRepository>();
