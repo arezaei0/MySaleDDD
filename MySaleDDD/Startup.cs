@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -6,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySaleDDD.AutoMapper;
 using MySaleDDD.Core;
 using MySaleDDD.Core.Models;
 using MySaleDDD.Data.Repository;
@@ -28,7 +30,7 @@ namespace MySaleDDD
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connectionstring"),x=>x.MigrationsAssembly("MySaleDDD.Core")));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connectionstring"), x => x.MigrationsAssembly("MySaleDDD.Core")));
             services.AddIdentity<ApplicationUser, ApplicationRole>(Options =>
             {
                 Options.Password.RequiredLength = 6;
@@ -36,10 +38,20 @@ namespace MySaleDDD
                 Options.Password.RequireLowercase = false;
                 Options.Password.RequireNonAlphanumeric = false;
 
-                 
+
             }).AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddScoped<IBrandRepository, BrandRepository>();
+
+            IMapper mapper = new MapperConfiguration(mc => { mc.AddProfile(new AutoMapperProfile()); }).CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddSession(Options =>
+            {
+                Options.Cookie.IsEssential = true;
+                Options.Cookie.HttpOnly = true;
+                Options.IdleTimeout = TimeSpan.FromMinutes(60);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,12 +67,15 @@ namespace MySaleDDD
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            app.UseAuthentication();
+            app.UseSession();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
-
             app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {
