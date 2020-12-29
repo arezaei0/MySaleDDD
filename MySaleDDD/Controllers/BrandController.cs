@@ -15,6 +15,10 @@ namespace MySaleDDD.Controllers
     {
         private readonly IBrandRepository _repo;
         private readonly IMapper _mapper;
+        [TempData]
+        public string SuccessMessage { get; set; }
+        [TempData]
+        public string ErrorMessage { get; set; }
         public BrandController(IBrandRepository repo, IMapper mapper)
         {
             _repo = repo;
@@ -37,11 +41,47 @@ namespace MySaleDDD.Controllers
             if (ModelState.IsValid)
             {
                 Brand brand = _mapper.Map<BaseViewModel, Brand>(model);
-                await _repo.InsertAsync(brand);
+               var result= await _repo.InsertAsync(brand);
+                if (result == -1)
+                    ErrorMessage = "خطا در ثبت اطلاعات";
+                SuccessMessage = "اطلاعات با موفقیت ثبت شد";
                 return RedirectToAction("Index");
             }
 
             return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Edit(int Id)
+        {
+            Brand brand = await _repo.GetByIdAsync(Id);
+            if (brand == null) return NotFound();
+            BaseViewModel model = _mapper.Map<Brand, BaseViewModel>(brand);
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(BaseViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Brand brand = _mapper.Map<BaseViewModel, Brand>(model);
+                var result= await  _repo.UpdateAsync(brand);
+                if (result == -1)
+                    ErrorMessage = "خطا در ویرایش اطلاعات";
+                SuccessMessage = "اطلاعات با موفقیت ویرایش شد";
+                return RedirectToAction("Edit",new { Id=model.Id});
+            }
+
+
+            return View(model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> Delete(int Id)
+        {
+            var result= await _repo.RemoveAsync(Id);
+            if (result <1)
+                ErrorMessage = "خطا در حذف اطلاعات";
+            SuccessMessage = "اطلاعات با موفقیت حذف شد";
+            return RedirectToAction("Index");
         }
     }
 }
