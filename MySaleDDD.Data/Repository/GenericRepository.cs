@@ -9,19 +9,33 @@ using System.Threading.Tasks;
 
 namespace MySaleDDD.Data.Repository
 {
-    public class BrandRepository : IBrandRepository
+    public class GenericRepository<Tentity> : IGenericRepository<Tentity> where Tentity : BaseEntity
     {
         private readonly DataContext _context;
-        public DbSet<Brand> dbset;
+        public DbSet<Tentity> dbset;
         string errorMessage;
 
-        public BrandRepository(DataContext context)
+        public GenericRepository(DataContext context)
         {
             _context = context;
-            this.dbset = context.Set<Brand>();
+            this.dbset = context.Set<Tentity>();
+        }
+        public IQueryable<Tentity> GetASQueryable(string includeProperties = "")
+        {
+            IQueryable<Tentity> query = dbset;
+            query = query.Where(x => !x.IsDeleted);
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                foreach (var item in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(item);
+                }
+
+            }
+            return query;
         }
 
-        public async Task<int> DeleteAsync(Brand entity)
+        public async Task<int> DeleteAsync(Tentity entity)
         {
             entity.IsDeleted = true;
             entity.DeleteDate = DateTime.Now;
@@ -36,29 +50,43 @@ namespace MySaleDDD.Data.Repository
             return await _context.SaveChangesAsync();
         }
 
-        public  IEnumerable<Brand> GetAll()
+        public IEnumerable<Tentity> GetAll(string includeProperties = "")
         {
-            return dbset.Where(w => !w.IsDeleted).ToList();
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                return dbset.Where(x => !x.IsDeleted).Include(includeProperties).ToList(); // We Don't Want Multi Join. We want only One Join. If We want Multi Join we should return Iqueryable Type.
+            }
+            else
+            {
+                return dbset.Where(x => !x.IsDeleted).ToList();
+            }
         }
 
-        public async Task<IEnumerable<Brand>> GetAllAysnc()
+        public async Task<IEnumerable<Tentity>> GetAllAysnc(string includeProperties = "")
         {
-            return await dbset.Where(w => !w.IsDeleted).ToListAsync();
+            if (!string.IsNullOrEmpty(includeProperties))
+            {
+                return await dbset.Where(x => !x.IsDeleted).Include(includeProperties).ToListAsync(); 
+            }
+            else
+            {
+                return await dbset.Where(x => !x.IsDeleted).ToListAsync();
+            }
         }
 
-        public async Task<Brand> GetByIdAsync(int Id)
+        public async Task<Tentity> GetByIdAsync(int Id)
         {
             return await dbset.FindAsync(Id);
-            
+
         }
 
-        public int Insert(Brand entity)
+        public int Insert(Tentity entity)
         {
             try
             {
                 entity.AddedDate = DateTime.Now;
                 dbset.Add(entity);
-                return  _context.SaveChanges();
+                return _context.SaveChanges();
             }
             catch
             {
@@ -67,13 +95,13 @@ namespace MySaleDDD.Data.Repository
             }
         }
 
-        public async Task<int> InsertAllAsync(List<Brand> entities)
+        public async Task<int> InsertAllAsync(List<Tentity> entities)
         {
             dbset.AddRange(entities);
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<int> InsertAsync(Brand entity)
+        public async Task<int> InsertAsync(Tentity entity)
         {
             try
             {
@@ -81,7 +109,7 @@ namespace MySaleDDD.Data.Repository
                 dbset.Add(entity);
                 return await _context.SaveChangesAsync();
             }
-            catch 
+            catch
             {
 
                 return -1;
@@ -91,26 +119,26 @@ namespace MySaleDDD.Data.Repository
         public async Task<int> RemoveAsync(int Id)
         {
             var entity = await dbset.FindAsync(Id);
-            if(_context.Entry(entity).State== EntityState.Detached)
+            if (_context.Entry(entity).State == EntityState.Detached)
             {
                 dbset.Attach(entity);
             }
             dbset.Remove(entity);
             return await _context.SaveChangesAsync();
         }
-        public async Task<int> RemoveAsync(Brand entity)
+        public async Task<int> RemoveAsync(Tentity entity)
         {
             dbset.Remove(entity);
             return await _context.SaveChangesAsync();
         }
-        public int Update(Brand entity)
+        public int Update(Tentity entity)
         {
             entity.LastModified = DateTime.Now;
             _context.Update(entity);
             return _context.SaveChanges();
         }
 
-        public async Task<int> UpdateAsync(Brand entity)
+        public async Task<int> UpdateAsync(Tentity entity)
         {
             entity.LastModified = DateTime.Now;
             _context.Update(entity);

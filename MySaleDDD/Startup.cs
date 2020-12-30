@@ -42,6 +42,7 @@ namespace MySaleDDD
             }).AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped(typeof(IGenericRepository<>),typeof( GenericRepository<>));
 
             IMapper mapper = new MapperConfiguration(mc => { mc.AddProfile(new AutoMapperProfile()); }).CreateMapper();
             services.AddSingleton(mapper);

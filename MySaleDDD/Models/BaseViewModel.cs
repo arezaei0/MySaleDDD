@@ -14,7 +14,7 @@ namespace MySaleDDD.Models
         public int Id { get; set; }
         public DateTime? AddedDate { get; set; }
         public string SystemUserId { get; set; }
-      
+        [Display(Name = nameof(Titel), ResourceType = typeof(Resources.Labels))]
         public string Titel { get; set; }
     }
 }
