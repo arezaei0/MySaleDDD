@@ -4,9 +4,8 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/shared/_Layout.cshtml";
 
-    var entity = Url.ActionContext.RouteData.Values["controller"].ToString();
+    var entity = Url.ActionContext.RouteData.Values["controller"].ToString();//this is Best Practice. If I want to Copy an Index and Use this Code again to another Index.
 }
-
 <br />
 <br />
 <div class="container" style="padding:30px">

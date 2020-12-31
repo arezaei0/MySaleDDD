@@ -59,5 +59,23 @@ namespace MySaleDDD.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to خطا در انجام عملیات.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عملیات با موفقیت انجام شد.
+        /// </summary>
+        public static string Sucess {
+            get {
+                return ResourceManager.GetString("Sucess", resourceCulture);
+            }
+        }
     }
 }

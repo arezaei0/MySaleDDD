@@ -44,8 +44,8 @@ namespace MySaleDDD.Controllers
                 Brand brand = _mapper.Map<BaseViewModel, Brand>(model);
                var result= await _repo.InsertAsync(brand);
                 if (result == -1)
-                    ErrorMessage = "خطا در ثبت اطلاعات";
-                SuccessMessage = "اطلاعات با موفقیت ثبت شد";
+                    ErrorMessage = Resources.Messages.Error;
+                SuccessMessage = Resources.Messages.Sucess;
                 return RedirectToAction("Index");
             }
 
