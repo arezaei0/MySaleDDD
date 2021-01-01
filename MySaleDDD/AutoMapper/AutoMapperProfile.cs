@@ -14,6 +14,7 @@ namespace MySaleDDD.AutoMapper
         {
             CreateMap<Brand, BaseViewModel>();
             CreateMap<BaseViewModel, Brand>();
+            CreateMap<BaseViewModel, Unit>().ReverseMap();
         }
     }
 }
