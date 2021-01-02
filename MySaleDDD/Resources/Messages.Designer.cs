@@ -61,7 +61,34 @@ namespace MySaleDDD.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to خطا در انجام عملیات.
+        ///   Looks up a localized string similar to دسترسی زمانی برای اعمال تغییرات به پایان رسیده است.
+        /// </summary>
+        public static string AccessDeadlineReached {
+            get {
+                return ResourceManager.GetString("AccessDeadlineReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to درج آیتم برای آینده معتبر نمی باشد؛ لطفا تاریخ انتخاب شده را اصلاح نمایید.
+        /// </summary>
+        public static string CanNotAddItemOnFuture {
+            get {
+                return ResourceManager.GetString("CanNotAddItemOnFuture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تغییرات با موفقیت ذخیره شد..
+        /// </summary>
+        public static string ChangesSavedSuccessfully {
+            get {
+                return ResourceManager.GetString("ChangesSavedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عملیات ناموفق.
         /// </summary>
         public static string Error {
             get {
@@ -70,11 +97,92 @@ namespace MySaleDDD.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to عملیات با موفقیت انجام شد.
+        ///   Looks up a localized string similar to اطلاعات شرکت شامل لوگو، مدیرعامل، تاریخ انتصاب، آدرس یا ... ناقص است. برای تایید فرم ابتدا پروفایل شرکت کامل شود.
         /// </summary>
-        public static string Sucess {
+        public static string IncompleteCompanyProfile {
             get {
-                return ResourceManager.GetString("Sucess", resourceCulture);
+                return ResourceManager.GetString("IncompleteCompanyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاریخ وارد شده صحیح نمی باشد.
+        /// </summary>
+        public static string InvalidDate {
+            get {
+                return ResourceManager.GetString("InvalidDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to لطفا یک فرمت مجاز تصویر شامل jpg,png یا gif انتخاب کنید.
+        /// </summary>
+        public static string InvalidFileType {
+            get {
+                return ResourceManager.GetString("InvalidFileType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to نام کاربری یا کلمه عبور اشتباه است.
+        /// </summary>
+        public static string InvalidLoginAttempt {
+            get {
+                return ResourceManager.GetString("InvalidLoginAttempt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to دامین انتخاب شده اشتباه است.
+        /// </summary>
+        public static string InvaliDomainAttempt {
+            get {
+                return ResourceManager.GetString("InvaliDomainAttempt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عملیات غیر مجاز!.
+        /// </summary>
+        public static string InvalidOperation {
+            get {
+                return ResourceManager.GetString("InvalidOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد اعضای هیات مدیره شرکت باید حداکثر {0} نفر باشد.
+        /// </summary>
+        public static string MaxNumberOfBoardMembersReached {
+            get {
+                return ResourceManager.GetString("MaxNumberOfBoardMembersReached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to آیتم مورد نظر حذف نشد؛ این ممکن است به دلیل وابستگی آیتم های دیگر به آن باشد. ابتدا وابستگی ها را حذف و سپس اقدام به حذف آیتم مورد نظر کنید.
+        /// </summary>
+        public static string ProblemDeletingItem {
+            get {
+                return ResourceManager.GetString("ProblemDeletingItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ردیف وارد شده تکراری است.
+        /// </summary>
+        public static string RedundantRowAdded {
+            get {
+                return ResourceManager.GetString("RedundantRowAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to فیلد الزامی می باشد.
+        /// </summary>
+        public static string RequiredField {
+            get {
+                return ResourceManager.GetString("RequiredField", resourceCulture);
             }
         }
     }

@@ -117,16 +117,148 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Password" xml:space="preserve">
-    <value>کلمه عبور</value>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
   </data>
-  <data name="Titel" xml:space="preserve">
+  <data name="CompanyTitle" xml:space="preserve">
+    <value>شرکت</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تایید رمز عبور</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="EconomicCode" xml:space="preserve">
+    <value>کد اقتصادی</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
+  <data name="NationalID" xml:space="preserve">
+    <value>شناسه ملی</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>رمز جدید</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>رمز عبور قبلی</value>
+  </data>
+  <data name="OwnershipPercentage" xml:space="preserve">
+    <value>درصد مالکیت</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>تلفن</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>کدپستی</value>
+  </data>
+  <data name="RegistrationDate" xml:space="preserve">
+    <value>تاریخ ثبت</value>
+  </data>
+  <data name="RegistrationNumber" xml:space="preserve">
+    <value>شماره ثبت</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>مرا به خاطر بسپار</value>
+  </data>
+  <data name="RoleType" xml:space="preserve">
+    <value>نقش</value>
+  </data>
+  <data name="ShareholderTitle" xml:space="preserve">
+    <value>سهامدار</value>
+  </data>
+  <data name="Title" xml:space="preserve">
     <value>عنوان</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>نام کاربری</value>
   </data>
-  <data name="UserRole" xml:space="preserve">
-    <value>نقش کاربر</value>
+  <data name="EndDate" xml:space="preserve">
+    <value>تاریخ پایان</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاریخ شروع</value>
+  </data>
+  <data name="EducationDegreeTitle" xml:space="preserve">
+    <value>مدرک تحصیلی</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>جنسیت</value>
+  </data>
+  <data name="MeetingSubject" xml:space="preserve">
+    <value>موضوع مجمع</value>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>تاریخ تولد</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>ماه</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>سال</value>
+  </data>
+  <data name="MeetingDate" xml:space="preserve">
+    <value>تاریخ جلسه</value>
+  </data>
+  <data name="NationalCode" xml:space="preserve">
+    <value>کد ملی</value>
+  </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>از تاریخ</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>تا تاریخ</value>
+  </data>
+  <data name="BrandTitle" xml:space="preserve">
+    <value>نام برند</value>
+  </data>
+  <data name="ProductCode" xml:space="preserve">
+    <value>کد محصول</value>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>تعداد</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>اندازه</value>
+  </data>
+  <data name="UnitTitle" xml:space="preserve">
+    <value>نام واحد</value>
+  </data>
+  <data name="BrandId" xml:space="preserve">
+    <value>برند</value>
+  </data>
+  <data name="UnitId" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="BuyPrice" xml:space="preserve">
+    <value>قیمت خرید</value>
+  </data>
+  <data name="SellPrice" xml:space="preserve">
+    <value>قیمت فروش</value>
+  </data>
+  <data name="ProductTitle" xml:space="preserve">
+    <value>نام محصول</value>
+  </data>
+  <data name="Profit" xml:space="preserve">
+    <value>سود ناخالص</value>
   </data>
 </root>

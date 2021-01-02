@@ -117,10 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Error" xml:space="preserve">
-    <value>خطا در انجام عملیات</value>
+  <data name="AccessDeadlineReached" xml:space="preserve">
+    <value>دسترسی زمانی برای اعمال تغییرات به پایان رسیده است</value>
   </data>
-  <data name="Sucess" xml:space="preserve">
-    <value>عملیات با موفقیت انجام شد</value>
+  <data name="CanNotAddItemOnFuture" xml:space="preserve">
+    <value>درج آیتم برای آینده معتبر نمی باشد؛ لطفا تاریخ انتخاب شده را اصلاح نمایید</value>
+  </data>
+  <data name="ChangesSavedSuccessfully" xml:space="preserve">
+    <value>تغییرات با موفقیت ذخیره شد.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>عملیات ناموفق</value>
+  </data>
+  <data name="IncompleteCompanyProfile" xml:space="preserve">
+    <value>اطلاعات شرکت شامل لوگو، مدیرعامل، تاریخ انتصاب، آدرس یا ... ناقص است. برای تایید فرم ابتدا پروفایل شرکت کامل شود</value>
+  </data>
+  <data name="InvalidDate" xml:space="preserve">
+    <value>تاریخ وارد شده صحیح نمی باشد</value>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>لطفا یک فرمت مجاز تصویر شامل jpg,png یا gif انتخاب کنید</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>نام کاربری یا کلمه عبور اشتباه است</value>
+  </data>
+  <data name="InvaliDomainAttempt" xml:space="preserve">
+    <value>دامین انتخاب شده اشتباه است</value>
+  </data>
+  <data name="InvalidOperation" xml:space="preserve">
+    <value>عملیات غیر مجاز!</value>
+  </data>
+  <data name="MaxNumberOfBoardMembersReached" xml:space="preserve">
+    <value>تعداد اعضای هیات مدیره شرکت باید حداکثر {0} نفر باشد</value>
+  </data>
+  <data name="ProblemDeletingItem" xml:space="preserve">
+    <value>آیتم مورد نظر حذف نشد؛ این ممکن است به دلیل وابستگی آیتم های دیگر به آن باشد. ابتدا وابستگی ها را حذف و سپس اقدام به حذف آیتم مورد نظر کنید</value>
+  </data>
+  <data name="RedundantRowAdded" xml:space="preserve">
+    <value>ردیف وارد شده تکراری است</value>
+  </data>
+  <data name="RequiredField" xml:space="preserve">
+    <value>فیلد الزامی می باشد</value>
   </data>
 </root>

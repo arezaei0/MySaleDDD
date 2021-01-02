@@ -44,7 +44,7 @@ namespace MySaleDDD.Controllers
                 var result = await _repo.InsertAsync(unit);
                 if (result == -1)
                     ErrorMessage = Resources.Messages.Error;
-                SuccessMessage = Resources.Messages.Sucess;
+                SuccessMessage = Resources.Messages.ChangesSavedSuccessfully;
                 return RedirectToAction("Index");
             }
 
