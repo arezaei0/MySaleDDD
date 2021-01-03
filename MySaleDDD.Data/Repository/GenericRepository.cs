@@ -30,7 +30,6 @@ namespace MySaleDDD.Data.Repository
                 {
                     query = query.Include(item);
                 }
-
             }
             return query;
         }

@@ -88,6 +88,15 @@ namespace MySaleDDD.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to برند.
+        /// </summary>
+        public static string BrandTitel {
+            get {
+                return ResourceManager.GetString("BrandTitel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نام برند.
         /// </summary>
         public static string BrandTitle {
@@ -102,6 +111,15 @@ namespace MySaleDDD.Resources {
         public static string BuyPrice {
             get {
                 return ResourceManager.GetString("BuyPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قیمت خرید.
+        /// </summary>
+        public static string ByePrice {
+            get {
+                return ResourceManager.GetString("ByePrice", resourceCulture);
             }
         }
         
@@ -435,6 +453,15 @@ namespace MySaleDDD.Resources {
         public static string StartDate {
             get {
                 return ResourceManager.GetString("StartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to عنوان.
+        /// </summary>
+        public static string Titel {
+            get {
+                return ResourceManager.GetString("Titel", resourceCulture);
             }
         }
         

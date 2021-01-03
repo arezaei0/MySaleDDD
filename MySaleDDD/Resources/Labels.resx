@@ -261,4 +261,13 @@
   <data name="Profit" xml:space="preserve">
     <value>سود ناخالص</value>
   </data>
+  <data name="BrandTitel" xml:space="preserve">
+    <value>برند</value>
+  </data>
+  <data name="ByePrice" xml:space="preserve">
+    <value>قیمت خرید</value>
+  </data>
+  <data name="Titel" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
 </root>
