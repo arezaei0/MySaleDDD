@@ -17,4 +17,9 @@ namespace MySaleDDD.Models
         [Display(Name = nameof(Titel), ResourceType = typeof(Resources.Labels))]
         public string Titel { get; set; }
     }
+    public class KeyValueViewModel
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
+    }
 }
