@@ -1,4 +1,4 @@
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -41,11 +41,22 @@ namespace MySaleDDD
 
             }).AddEntityFrameworkStores<DataContext>().AddDefaultTokenProviders();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
+            services.ConfigureApplicationCookie(option => option.LoginPath = "/Account/Login"); //اگر توی کوکی نباشه میبره به مسیر لاگین
+
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped(typeof(IGenericRepository<>),typeof( GenericRepository<>));
 
             IMapper mapper = new MapperConfiguration(mc => { mc.AddProfile(new AutoMapperProfile()); }).CreateMapper();
             services.AddSingleton(mapper);
+
+
+            services.AddAuthorization(options =>           //Is in Role Admin?
+            {
+                options.AddPolicy("RequireAdministratorRole",
+                     policy => policy.RequireRole("Admin"));
+            });
+
 
             services.AddSession(Options =>
             {
@@ -68,6 +79,15 @@ namespace MySaleDDD
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+
+
+            app.UseStatusCodePages(async (context) =>
+            {
+                var response = context.HttpContext.Response;
+                response.Redirect("/Home/Error");
+            });
+
 
             app.UseAuthentication();
             app.UseSession();

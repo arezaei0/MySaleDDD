@@ -15,6 +15,7 @@ namespace MySaleDDD.Helper
         public readonly string AccesToProducts = "محصولات";
         public readonly string AccessToReport = "گزارش";
     }
+
     public static class Utility
     {
         public static async Task<bool> HasAccess(this ClaimsPrincipal User, UserManager<ApplicationUser> userManager, string access)
@@ -26,4 +27,7 @@ namespace MySaleDDD.Helper
             return claims.Any(x => x.Value == access); // اگر پیدا کندTrue می شود
         }
     }
+
+
+
 }

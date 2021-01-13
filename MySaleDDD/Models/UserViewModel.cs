@@ -14,31 +14,31 @@ namespace MySaleDDD.Models
         }
 
         public string Id { get; set; }
-        [Display(Name =nameof(UserName), ResourceType =typeof(Resources.Messages))]
+        [Display(Name =nameof(UserName), ResourceType =typeof(Resources.Labels))]
         [Required(AllowEmptyStrings =false,ErrorMessageResourceName ="RequiredField", ErrorMessageResourceType =typeof(Resources.Messages))]
         public string UserName { get; set; }
-        [Display(Name = nameof(Email), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(Email), ResourceType = typeof(Resources.Labels))]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-        [Display(Name = nameof(Mobile), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(Mobile), ResourceType = typeof(Resources.Labels))]
         public string Mobile { get; set; }
-        [Display(Name = nameof(PhoneNumber), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(PhoneNumber), ResourceType = typeof(Resources.Labels))]
         public string PhoneNumber { get; set; }
-        [Display(Name = nameof(FirstName), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(FirstName), ResourceType = typeof(Resources.Labels))]
         [Required]
         public string FirstName { get; set; }
-        [Display(Name = nameof(LastName), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(LastName), ResourceType = typeof(Resources.Labels))]
         [Required]
         public string LastName { get; set; }
-        [Display(Name = nameof(Password), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(Password), ResourceType = typeof(Resources.Labels))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(Resources.Messages))]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        [Display(Name = nameof(ConfirmPassword), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(ConfirmPassword), ResourceType = typeof(Resources.Labels))]
         [Required(AllowEmptyStrings = false, ErrorMessageResourceName = "RequiredField", ErrorMessageResourceType = typeof(Resources.Messages))]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
-        [Display(Name = nameof(RoleType), ResourceType = typeof(Resources.Messages))]
+        [Display(Name = nameof(RoleType), ResourceType = typeof(Resources.Labels))]
         [Required]
         public RoleType  RoleType { get; set; }
         [Display(Name ="دسترسی ها")]

@@ -11,15 +11,11 @@ using System.Threading.Tasks;
 
 namespace MySaleDDD.Controllers
 {
-    public class BrandController : Controller
+    public class BrandController : BaseController
     {
         //private readonly IBrandRepository _repo;   //Dont Use Generic Repository
         private readonly IGenericRepository<Brand> _repo;
         private readonly IMapper _mapper;
-        [TempData]
-        public string SuccessMessage { get; set; }
-        [TempData]
-        public string ErrorMessage { get; set; }
         public BrandController(IGenericRepository<Brand> repo, IMapper mapper)
         {
             _repo = repo;

@@ -15,7 +15,7 @@ namespace MySaleDDD.Controllers
     public class UserController : BaseController
     {
         private IMapper _mapper;
-        private readonly UserManager<ApplicationUser> _userManager;
+
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         public UserController(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager,
@@ -78,7 +78,7 @@ namespace MySaleDDD.Controllers
                     {
                         await _roleManager.CreateAsync(new ApplicationRole
                         {
-                            Name = model.RoleType.ToString().ToUpper(),
+                            Name = model.RoleType.ToString(),
                             NormalizedName = model.RoleType.ToString().ToUpper()  //User.IsInRole("Admin") ادمین بزرگ یا کوچک حساس نمی شود
                         });
                     }
@@ -114,6 +114,7 @@ namespace MySaleDDD.Controllers
                 return View(model);
             }
             return RedirectToAction("Index");
+
         }
         [HttpPost]
         public async Task<IActionResult> Edit(UserViewModel model)

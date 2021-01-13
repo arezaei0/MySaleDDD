@@ -26,6 +26,7 @@ namespace MySaleDDD.Core
             builder.AddConfiguration(new UnitMap());
             builder.AddConfiguration(new BrandMap());
             builder.AddConfiguration(new ProductMap());
+            builder.AddConfiguration(new OrderMap());
         }
     }
 }

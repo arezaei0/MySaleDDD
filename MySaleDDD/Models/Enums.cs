@@ -8,7 +8,7 @@ namespace MySaleDDD.Models
 {
     public enum RoleType
     {
-        [Display(Name ="مدیر")]
+        [Display(Name = "مدیر")]
         Admin,
         [Display(Name = "اپراتور")]
         Operator,
