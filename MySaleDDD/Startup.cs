@@ -33,6 +33,7 @@ namespace MySaleDDD
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Connectionstring"), x => x.MigrationsAssembly("MySaleDDD.Core")));
             services.AddIdentity<ApplicationUser, ApplicationRole>(Options =>
             {
+                Options.SignIn.RequireConfirmedAccount = false;
                 Options.Password.RequiredLength = 6;
                 Options.Password.RequireUppercase = false;
                 Options.Password.RequireLowercase = false;

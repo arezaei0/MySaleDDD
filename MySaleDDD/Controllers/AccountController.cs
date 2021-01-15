@@ -14,9 +14,9 @@ namespace MySaleDDD.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly UserManager<ApplicationRole> _roleManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        public AccountController(UserManager<ApplicationUser> userManager, UserManager<ApplicationRole> roleManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -39,7 +39,7 @@ namespace MySaleDDD.Controllers
             }
             else
             {
-                await HttpContext.SignOutAsync(); // کابر رو می اندزیم بیرون
+                await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme); // کابر رو می اندزیم بیرون
             }
             ViewData["RerurnUrl"] = returnUrl;
             return View();
