@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySaleDDD.Core.Models;
@@ -38,6 +39,7 @@ namespace MySaleDDD.Controllers
         }
 
         [HttpPost(Name ="Card")] //معمولا ایجکسی ها را نام می دهیم
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Card(Tag tag)
         {
             var listCard = await _repoOrder.GetAllAysnc();
